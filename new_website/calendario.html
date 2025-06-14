@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Copa Ajedrez 2025</title>
+  <link rel="icon" href="./images/logo_sin_texto.png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: verdana;
+      color: orange;
+      background: #0A0A0A;
+    }
+    /* Estilos para el Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      /* background: #f4f4f4; */
+      background: orange;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 50px;
+      padding-left: 5%;
+    }
+    nav h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+    #logo {
+      width: 30%;
+    }
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: #0A0A0A;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 2px;
+      width: 0;
+      background: red;
+      transition: width 0.3s;
+    }
+    .nav-links a:hover {
+      color: red;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    #actual {
+      color: red;
+    }
+
+    #actual::after {
+      width: 100%;
+    }
+
+    #sub_body {
+      background: #0A0A0A;
+    }
+
+    #calendario {
+        padding: 5%;
+        text-align: center;
+    }
+
+    #calendario h2 {
+        text-align: center;
+        font-size: 200%;
+    }
+
+    #calendario p {
+        text-align: left;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .calendar {
+        width: 35%;
+        border: 1px solid white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #0A0A0A;
+        margin: 5%;
+        margin-bottom: 5px;
+        margin-left: 0%;
+        margin-right: 0%;
+        display: inline-block;
+    }
+
+    .calendar-header {
+        text-align: center;
+        padding: 10px 0;
+        background-color: orange;
+        color: #0A0A0A;
+        font-size: 1.5em;
+        font-weight: bold;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        border-top: 1px solid white;
+    }
+
+    .day {
+        text-align: center;
+        padding: 10px;
+        font-size: 1em;
+        font-weight: bold;
+        color: white;
+    }
+
+    .date {
+        height: 40px;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9em;
+        color: white;
+        border-top: 1px solid white;
+    }
+
+    .empty {
+        /* background-color: #f4f4f9; */
+        border-top: 1px solid white;
+        /* color: white;
+        padding: 10px;
+        font-size: 0.9em; */
+    }
+
+    footer {
+      background: #363636;
+      padding: 3%;
+    }
+
+    footer h2 {
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+
+    @media (max-width: 751px) {
+      #text_1 h1 {
+        font-size: 300%;
+      }
+    }
+
+    @media (max-width: 660px) {
+      /* nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+      } */
+       
+      nav {
+        display: block;
+        /* justify-content: space-between; */
+        align-items: center;
+        text-align: center;
+        padding: 10px 30px;
+        /* background: #f4f4f4; */
+        background: black;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 50px;
+        padding-left: 10%;
+      }
+      #text_1 h1 {
+        font-size: 200%;
+      }
+      nav h1 {
+        margin: 0;
+        font-size: 200%;
+        color: white;
+        display: block;        
+        margin: 10%;
+      }
+      .nav-links a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(184, 184, 184);
+        margin-left: 20px;
+        font-size: 16px;
+        transition: color 0.3s;
+        margin: 3%;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <!-- Menú de navegación -->
+  <nav>
+    <img id="logo" src="./images/logo_invertido.png" alt="">
+    <div class="nav-links">
+      <a href="https://sites.google.com/view/copa-ajedrez/">Inicio</a>
+      <a href="https://sites.google.com/view/copa-ajedrez/acerca_de/">Acerca de</a>
+      <a href="https://sites.google.com/view/copa-ajedrez/calendario/" id="actual">Calendario</a>
+      <a href="https://sites.google.com/view/copa-ajedrez/fixture/">Fixture</a>
+      <a href="https://sites.google.com/view/copa-ajedrez/histórico/">Histórico</a>
+      <a href="https://sites.google.com/view/copa-ajedrez/reglamento/">Reglamento</a>
+      <a href="https://sites.google.com/view/copa-ajedrez/denuncias/">Reclamos</a>
+    </div>
+  </nav>
+
+  <div id="sub_body">
+    <section id="calendario">
+        <h2>Calendario</h2>
+
+        <!-- Calendario de Febrero 2025 -->
+    
+        <!-- Repetir estructura para los meses de marzo a julio 2025 -->
+
+        <div class="calendar">
+            <div class="calendar-header">Junio 2025</div>
+            <div class="calendar-grid">
+                <div class="day">Dom</div>
+                <div class="day">Lun</div>
+                <div class="day">Mar</div>
+                <div class="day">Mié</div>
+                <div class="day">Jue</div>
+                <div class="day">Vie</div>
+                <div class="day">Sáb</div>
+                <div class="date" style="background: #00ff2a;">1</div>
+                <div class="date">2</div>
+                <div class="date">3</div>
+                <div class="date">4</div>
+                <div class="date">5</div>
+                <div class="date">6</div>
+                <div class="date">7</div>
+                <div class="date" style="background: #87ceeb;">8</div>
+                <div class="date">9</div>
+                <div class="date">10</div>
+                <div class="date">11</div>
+                <div class="date">12</div>
+                <div class="date">13</div>
+                <div class="date">14</div>
+                <div class="date" style="background: #ee82ee;">15</div>
+                <div class="date">16</div>
+                <div class="date">17</div>
+                <div class="date">18</div>
+                <div class="date">19</div>
+                <div class="date">20</div>
+                <div class="date">21</div>
+                <div class="date">22</div>
+                <div class="date">23</div>
+                <div class="date">24</div>
+                <div class="date">25</div>
+                <div class="date">26</div>
+                <div class="date">27</div>
+                <div class="date">28</div>
+                <div class="date">29</div>
+                <div class="date">30</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+            </div>
+        </div>
+    
+        <div class="calendar">
+            <div class="calendar-header">Julio 2025</div>
+            <div class="calendar-grid">
+                <div class="day">Dom</div>
+                <div class="day">Lun</div>
+                <div class="day">Mar</div>
+                <div class="day">Mié</div>
+                <div class="day">Jue</div>
+                <div class="day">Vie</div>
+                <div class="day">Sáb</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="date">1</div>
+                <div class="date">2</div>
+                <div class="date">3</div>
+                <div class="date">4</div>
+                <div class="date">5</div>
+                <div class="date">6</div>
+                <div class="date">7</div>
+                <div class="date">8</div>
+                <div class="date">9</div>
+                <div class="date">10</div>
+                <div class="date">11</div>
+                <div class="date">12</div>
+                <div class="date">13</div>
+                <div class="date">14</div>
+                <div class="date">15</div>
+                <div class="date">16</div>
+                <div class="date">17</div>
+                <div class="date">18</div>
+                <div class="date">19</div>
+                <div class="date">20</div>
+                <div class="date">21</div>
+                <div class="date">22</div>
+                <div class="date">23</div>
+                <div class="date">24</div>
+                <div class="date">25</div>
+                <div class="date">26</div>
+                <div class="date">27</div>
+                <div class="date">28</div>
+                <div class="date">29</div>
+                <div class="date">30</div>
+                <div class="date">31</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <div class="calendar-header">Agosto 2025</div>
+            <div class="calendar-grid">
+                <div class="day">Dom</div>
+                <div class="day">Lun</div>
+                <div class="day">Mar</div>
+                <div class="day">Mié</div>
+                <div class="day">Jue</div>
+                <div class="day">Vie</div>
+                <div class="day">Sáb</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="date">1</div>
+                <div class="date">2</div>
+                <div class="date">3</div>
+                <div class="date">4</div>
+                <div class="date">5</div>
+                <div class="date">6</div>
+                <div class="date">7</div>
+                <div class="date">8</div>
+                <div class="date">9</div>
+                <div class="date">10</div>
+                <div class="date">11</div>
+                <div class="date">12</div>
+                <div class="date">13</div>
+                <div class="date">14</div>
+                <div class="date">15</div>
+                <div class="date">16</div>
+                <div class="date">17</div>
+                <div class="date">18</div>
+                <div class="date">19</div>
+                <div class="date">20</div>
+                <div class="date">21</div>
+                <div class="date">22</div>
+                <div class="date">23</div>
+                <div class="date">24</div>
+                <div class="date">25</div>
+                <div class="date">26</div>
+                <div class="date">27</div>
+                <div class="date">28</div>
+                <div class="date">29</div>
+                <div class="date">30</div>
+                <div class="date">31</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+            </div>
+        </div>
+        <div class="calendar">
+            <div class="calendar-header">Septiembre 2025</div>
+            <div class="calendar-grid">
+                <div class="day">Dom</div>
+                <div class="day">Lun</div>
+                <div class="day">Mar</div>
+                <div class="day">Mié</div>
+                <div class="day">Jue</div>
+                <div class="day">Vie</div>
+                <div class="day">Sáb</div>
+                <div class="empty"></div>
+                <div class="date">1</div>
+                <div class="date">2</div>
+                <div class="date">3</div>
+                <div class="date">4</div>
+                <div class="date">5</div>
+                <div class="date">6</div>
+                <div class="date">7</div>
+                <div class="date">8</div>
+                <div class="date">9</div>
+                <div class="date">10</div>
+                <div class="date">11</div>
+                <div class="date">12</div>
+                <div class="date">13</div>
+                <div class="date" style="background: #ff0000; color: white;">14</div>
+                <div class="date">15</div>
+                <div class="date">16</div>
+                <div class="date">17</div>
+                <div class="date">18</div>
+                <div class="date">19</div>
+                <div class="date">20</div>
+                <div class="date">21</div>
+                <div class="date">22</div>
+                <div class="date">23</div>
+                <div class="date">24</div>
+                <div class="date">25</div>
+                <div class="date">26</div>
+                <div class="date">27</div>
+                <div class="date">28</div>
+                <div class="date">29</div>
+                <div class="date">30</div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+            </div>
+        </div>
+        <p style="color: #00ff2a">■ Publicación del logo, título y demás cualidades oficiales de la Copa Ajedrez 2025.</p>
+        <p style="color: #87ceeb">■ Publicación del fixture oficial.</p>
+        <p style="color: #ee82ee">■ Sorteo de la Fase de Grupos.</p>
+        <p style="color: #ff0000">■ Final de la Copa Ajedrez 2025.</p>
+        <p>Las fechas de los demás partidos de la Copa Ajedrez 2025 se confirmarán con la publicación del fixture oficial.</p>
+
+    
+
+        <!-- <div class="proyecto">
+            <h3>Villa Signature en Villamartín</h3>
+            <p>Descripción breve del proyecto.</p>
+        </div>
+        <div class="proyecto">
+            <h3>Adelfa 6</h3>
+            <p>Descripción breve del proyecto.</p>
+        </div> -->
+        <!-- Añadir más proyectos según sea necesario -->
+    </section>
+  </div>
+  <footer>
+    <h2>Copa Ajedrez 2025</h2>
+  </footer>
+</body>
+</html>
