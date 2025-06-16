@@ -184,7 +184,11 @@
       margin: auto;
     }
 
-    .section input {
+    #redirection {      
+      text-decoration: none;
+    }
+
+    #redirection input {
       width: 40%;
       display: block;
       margin: auto;
@@ -199,7 +203,7 @@
       transition: 0.3s ease-in-out;
     }
 
-    .section input:hover {
+    #redirection input:hover {
       width: 50%;
       background: #FFA500;
       cursor: pointer;
@@ -306,7 +310,9 @@
       </div>
       <div class="section" id="different">
         <div class="text-box-outside">Todo eso, en un lugar</div>
-        <input type="button" href="https://david8-coder.github.io/Copa-Ajedrez/calendario/" value="¿Querés saber más?">
+        <a id="redirection" href="https://david8-coder.github.io/Copa-Ajedrez/calendario/">
+          <input type="button" value="¿Querés saber más?">
+        </a>
       </div>
     </div>
   </div>
