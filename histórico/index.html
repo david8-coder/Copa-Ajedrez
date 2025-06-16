@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Copa Ajedrez 2025</title>
+  <link rel="icon" href="./images/logo_sin_texto.png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: verdana;
+      color: #FF5722;
+      background: #0A0A0A;
+    }
+    /* Estilos para el Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      /* background: #f4f4f4; */
+      background: #FF5722;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 50px;
+      padding-left: 5%;
+    }
+    nav h1 {
+      margin: 0;
+      font-size: 24px;
+      color: white;
+    }
+    #logo {
+      width: 30%;
+    }
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: #0A0A0A;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 2px;
+      width: 0;
+      background: white;
+      transition: width 0.3s;
+    }
+    .nav-links a:hover {
+      color: white;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    #actual {
+      color: white;
+    }
+
+    #actual::after {
+      width: 100%;
+    }
+
+    #sub_body {
+      background: #0A0A0A;
+      margin-left: 15%;
+      margin-top: 15%;
+      margin-left: 3%;
+    }
+
+    input {
+      width: 20%;
+      display: block;
+      margin: auto;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      font-size: 150%;
+      padding: 2%;
+      border: none;
+      border-radius: 100px;
+      background: #FFA500;
+      color: #0A0A0A;
+      transition: 0.3s ease-in-out;
+    }
+
+    input:hover {
+      width: 30%;
+      background: #ffbf48;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #363636;
+      padding: 3%;
+    }
+
+    footer h2 {
+      font-weight: bold;
+      color: white;
+      text-align: center;
+    }
+
+    @media (max-width: 751px) {
+      #text_1 h1 {
+        font-size: 300%;
+      }
+    }
+
+    @media (max-width: 660px) {
+      /* nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+      } */
+       
+      nav {
+        display: block;
+        /* justify-content: space-between; */
+        align-items: center;
+        text-align: center;
+        padding: 10px 30px;
+        /* background: #f4f4f4; */
+        background: black;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 50px;
+        padding-left: 10%;
+      }
+      #text_1 h1 {
+        font-size: 200%;
+      }
+      nav h1 {
+        margin: 0;
+        font-size: 200%;
+        color: white;
+        display: block;        
+        margin: 10%;
+      }
+      .nav-links a {
+        position: relative;
+        text-decoration: none;
+        color: rgb(184, 184, 184);
+        margin-left: 20px;
+        font-size: 16px;
+        transition: color 0.3s;
+        margin: 3%;
+      }
+
+      #actual {
+        color: red;
+      }
+
+      #actual::after {
+        width: 100%;
+      }
+      }
+  </style>
+</head>
+<body>
+  <!-- Menú de navegación -->
+  <nav>
+    <img id="logo" src="./images/logo_invertido.png" alt="">
+    <div class="nav-links">
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/">Inicio</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/acerca-de/">Acerca de</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/calendario/">Calendario</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/fixture/">Fixture</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/histórico/" id="actual">Histórico</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/reglamento/">Reglamento</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/denuncias/">Reclamos</a>
+    </div>
+  </nav>
+
+  <div id="sub_body">
+    <h1 style="text-align: center;">Esta sección aún no está disponible</h1>
+    <input type="button" href="https://david8-coder.github.io/Copa-Ajedrez/" value="Volver al inicio">
+  </div>
+  <footer>
+    <h2>Copa Ajedrez 2025</h2>
+  </footer>
+</body>
+</html>
