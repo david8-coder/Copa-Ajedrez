@@ -73,15 +73,79 @@
       margin-left: 3%;
     }
 
-    #redirection {      
-      text-decoration: none;
+    #title {
+      text-align: center;
+      font-size: 350%;
+      margin-top: none;
+      margin-bottom: 10%;
     }
 
-    #redirection input {
-      width: 20%;
+    #items {
+      margin-left: 10%;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      font-size: 14px;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-bottom: 10%;
+    }
+
+    th, td {
+      border: 1px solid #FF5722;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #FF5722;
+      color: #0A0A0A;
+    }
+
+    .small {
+      width: 5%;
+    }
+
+    .copy-button {
+      text-align: center;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #FF5722;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .copy-button:hover {
+      background: none;
+      color: orange;
+    }
+
+    .copy-icon {
+      margin-left: 5px;
+    }
+
+    #semifinales {
+      align-items: center;
+      width: 70%;
+      margin-bottom: 10%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+
+    #download_button {
+      text-decoration: none;
+      text-align: center;
+      width: 30%;
       display: block;
       margin: auto;
-      margin-top: 5%;
+      margin-top: 0;
       margin-bottom: 5%;
       font-size: 150%;
       padding: 2%;
@@ -92,8 +156,8 @@
       transition: 0.3s ease-in-out;
     }
 
-    #redirection input:hover {
-      width: 30%;
+    #download_button:hover {
+      width: 35%;
       background: #FFA500;
       cursor: pointer;
     }
@@ -180,11 +244,112 @@
   </nav>
 
   <div id="sub_body">
-    <h1 style="text-align: center;">El fixture oficial de la Copa Ajedrez 2025 será publicado y anunciado el día domingo, 22 de junio del 2025. La única fecha ya confirmada es la Final de la Copa Ajedrez el día domingo, 14 de septiembre del 2025</h1>
-    <h2 style="margin-left: 10%; margin-right: 10%; text-align: center;">¡Estate atento!</h2>
-    <a id="redirection" href="https://david8-coder.github.io/Copa-Ajedrez/">
-      <input type="button" value="Volver al inicio">
-    </a>
+    <h1 id="title">Fixture Oficial de la Copa Ajedrez 2025</h1>
+    <div id="items">
+      <h3>Jugadores (Se definirán en el sorteo el día 29/6)</h3>
+      <ul>
+        <li class="players">Jugador 1: Fernández, Fernando.</li>
+        <li class="players">Jugador 2: Por definir.</li>
+        <li class="players">Jugador 3: Por definir.</li>
+        <li class="players">Jugador 4: Por definir.</li>
+        <li class="players">Jugador 5: Por definir.</li>
+        <li class="players">Jugador 6: Por definir.</li>
+      </ul>
+      <h3>Referencias</h3>
+      <ul>
+        <li>PO: Puntos Obtenidos.</li>
+        <li>PS: Puntos Sumados.</li>
+        <li>Pr: Precisión.</li>
+        <li>IEJ: Índice de Efectividad por Jugada.</li>
+      </ul>
+    </div>
+    <h2 style="text-align: center;">Grupo Único</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th class="small">IEJ</th>
+          <th class="small">Pr</th>
+          <th class="small">PS</th>
+          <th class="small">PO</th>
+          <th>Jugador</th>
+          <th class="small">Resultado</th>
+          <th>Jugador</th>
+          <th class="small">PO</th>
+          <th class="small">PS</th>
+          <th class="small">Pr</th>
+          <th class="small">IEJ</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-partidas">
+        <!-- Las filas se agregarán desde JS -->
+      </tbody>
+    </table>
+
+    <script>
+      const partidas = [        
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J2", pgn: "PGN1" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J3", resultado: "-", jugador2: "J4", pgn: "PGN2" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J5", resultado: "-", jugador2: "J6", pgn: "PGN3" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J3", pgn: "PGN4" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J4", pgn: "PGN5" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J5", resultado: "-", jugador2: "J6", pgn: "PGN6" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J4", pgn: "PGN7" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J6", pgn: "PGN8" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J3", resultado: "-", jugador2: "J5", pgn: "PGN9" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J5", pgn: "PGN10" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J3", pgn: "PGN11" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J4", resultado: "-", jugador2: "J6", pgn: "PGN12" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J6", pgn: "PGN13" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J5", pgn: "PGN14" },
+        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J3", resultado: "-", jugador2: "J4", pgn: "PGN15" }
+      ];
+
+      const tabla = document.getElementById("tabla-partidas");
+
+      partidas.forEach((p, i) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${p.date}</td>
+          <td>${p.hour}</td>
+          <td class="small">${p.iej1}</td>
+          <td class="small">${p.pr1}</td>
+          <td class="small">${p.ps1}</td>
+          <td class="small">${p.po1}</td>
+          <td>${p.jugador1}</td>
+          <td class="small">${p.resultado}</td>
+          <td>${p.jugador2}</td>
+          <td class="small">${p.po2}</td>
+          <td class="small">${p.ps2}</td>
+          <td class="small">${p.pr2}</td>
+          <td class="small">${p.iej2}</td>
+          <td>
+            <button class="copy-button" onclick="copiarPGN(this, '${p.pgn}')">
+              Copiar link
+              <span class="copy-icon">📋</span>
+            </button>
+          </td>
+        `;
+        tabla.appendChild(fila);
+      });
+
+      function copiarPGN(boton, texto) {
+        const textoOriginal = 'Copiar link <span class="copy-icon">📋</span>';
+        const textoCopiado = 'Link copiado <span class="copy-icon">✔</span>';
+
+        navigator.clipboard.writeText(texto).then(() => {
+          boton.innerHTML = textoCopiado;
+
+          setTimeout(() => {
+            boton.innerHTML = textoOriginal;
+          }, 3000);
+        });
+      }
+    </script>
+    <img id="semifinales" src="../images/semifinales-portada.png">
+    <a id="download_button" href="./Fixture-Copa-Ajedrez-2025.pdf" download="./Fixture-Copa-Ajedrez-2025.pdf">Descargar fixture en un folleto</a>
   </div>
   <footer>
     <h2>Copa Ajedrez 2025</h2>

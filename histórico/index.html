@@ -73,29 +73,86 @@
       margin-left: 3%;
     }
 
-    #redirection {      
-      text-decoration: none;
+    #title {
+      text-align: center;
+      font-size: 350%;
+      margin-top: none;
+      margin-bottom: 10%;
     }
 
-    #redirection input {
-      width: 20%;
-      display: block;
-      margin: auto;
-      margin-top: 5%;
-      margin-bottom: 5%;
-      font-size: 150%;
-      padding: 2%;
-      border: none;
-      border-radius: 100px;
-      background: #FF5722;
+    #sub_title {
+      text-align: center;
+      font-size: 250%;
+      margin-top: none;
+      margin-bottom: 0;      
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      font-size: 14px;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-bottom: 10%;
+    }
+
+    th, td {
+      border: 1px solid #FF5722;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #FF5722;
       color: #0A0A0A;
-      transition: 0.3s ease-in-out;
     }
 
-    #redirection input:hover {
-      width: 30%;
-      background: #FFA500;
+    .j {
+      width: 20%;
+    }
+
+    .d {
+      width: 10%;
+    }
+    
+    .l {
+      width: 20%;
+    }
+
+    .n {
+      width: 5%
+    }
+
+    .r {
+      width: 10%;
+    }
+
+    .copy-button {
+      text-align: center;
       cursor: pointer;
+      background: none;
+      border: none;
+      color: #FF5722;
+      padding: 4px 8px;
+      border-radius: 4px;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .copy-button:hover {
+      background: none;
+      color: orange;
+    }
+
+    .copy-icon {
+      margin-left: 5px;
+    }
+
+    #semifinales {
+      margin-left: 20%;
+      margin-bottom: 10%
     }
 
     footer {
@@ -188,10 +245,102 @@
   </nav>
 
   <div id="sub_body">
-    <h1 style="text-align: center;">Esta sección aún no está disponible</h1>
-    <a id="redirection" href="https://david8-coder.github.io/Copa-Ajedrez/">
-      <input type="button" value="Volver al inicio">
-    </a>
+    <h1 id="title">Histórico</h1>
+    <h1 id="sub_title">Copa Ajedrez 2024</h1>
+    <h2 style="text-align: center;">Grupo Único</h2>
+    <table>
+      <thead>
+        <tr>
+          <th class="d">Fecha</th>
+          <!-- <th>Hora</th>
+          <th class="n">IEJ</th>
+          <th class="n">Pr</th> -->
+          <th class="n">PT</th>
+          <th class="n">PO</th>
+          <th class="j">Jugador</th>
+          <th class="r">Resultado</th>
+          <th class="j">Jugador</th>
+          <th class="n">PO</th>
+          <th class="n">PT</th>
+          <!-- <th class="n">Pr</th>
+          <th class="n">IEJ</th> -->
+          <!-- <th class="l">Link</th> -->
+        </tr>
+      </thead>
+      <tbody id="tabla-partidas">
+        <!-- Las filas se agregarán desde JS -->
+      </tbody>
+    </table>
+    <div id="semifinales">
+        <h2>Semifinales</h2>
+        <ul>
+          <li>Javier ✓-✕ Benjamín</li>
+          <li>David ✕-✓ Fernando</li>
+        </ul>
+        <h2>Partido por el Tercer Puesto</h2>
+        <ul>
+          <li>Benjamín ✕-✓ David</li>
+        </ul>
+        <h2>Final de la Copa Ajedrez 2024</h2>
+        <ul>
+          <li>Javier ✕-✓ Fernando</li>
+        </ul>
+      </div>
+    <script>
+      const partidas = [
+        { date:"03/08/24", hour:"00:00", po1:"1", pt1:"1", pr1:"67,5", iej1:"", po2:"0", pt2:"0", pr2:"46,8", iej2:"", jugador1: "David", resultado: "✔-✘", jugador2: "Benjamín", pgn: "https://www.chess.com/game/live/116453441995?move=0"},
+        { date:"04/08/24", po1:"1", pt1:"1", pr1:"", iej1:"", po2:"0", pt2:"0", pr2:"", iej2:"", jugador1: "Javier", resultado: "✔-✘", jugador2: "Francisco", pgn: "PGN2" },
+        { date:"04/08/24", po1:"1", pt1:"1", pr1:"", iej1:"", po2:"0", pt2:"0", pr2:"", iej2:"", jugador1: "Fernando", resultado: "✔-✘", jugador2: "Rosario", pgn: "PGN3" },
+        { date:"10/08/24", po1:"0", pt1:"1", pr1:"62,4", iej1:"", po2:"1", pt2:"2", pr2:"80,3", iej2:"", jugador1: "David", resultado: "✘-✔", jugador2: "Javier", pgn: "PGN4" },
+        { date:"10/08/24", po1:"0", pt1:"0", pr1:"", iej1:"", po2:"1", pt2:"2", pr2:"", iej2:"", jugador1: "Benjamín", resultado: "✘-✔", jugador2: "Fernando", pgn: "PGN5" },
+        { date:"11/08/24", po1:"1", pt1:"1", pr1:"", iej1:"", po2:"0", pt2:"0", pr2:"", iej2:"", jugador1: "Francisco", resultado: "✔-✘", jugador2: "Rosario", pgn: "PGN6" },
+        { date:"11/08/24", po1:"1", pt1:"2", pr1:"", iej1:"", po2:"0", pt2:"1", pr2:"", iej2:"", jugador1: "David", resultado: "✔-✘", jugador2: "Francisco", pgn: "PGN7" },
+        { date:"17/08/24", po1:"0,5", pt1:"0,5", pr1:"", iej1:"", po2:"0,5", pt2:"0,5", pr2:"", iej2:"", jugador1: "Benjamín", resultado: "½", jugador2: "Rosario", pgn: "PGN8" },
+        { date:"17/08/24", po1:"1", pt1:"3", pr1:"", iej1:"", po2:"0", pt2:"2", pr2:"", iej2:"", jugador1: "Javier", resultado: "✔-✘", jugador2: "Fernando", pgn: "PGN9" },
+        { date:"18/08/24", po1:"1", pt1:"3", pr1:"", iej1:"", po2:"0", pt2:"2", pr2:"", iej2:"", jugador1: "David", resultado: "✔-✘", jugador2: "Fernando", pgn: "PGN10" },
+        { date:"18/08/24", po1:"1", pt1:"1,5", pr1:"", iej1:"", po2:"0", pt2:"1", pr2:"", iej2:"", jugador1: "Benjamín", resultado: "✔-✘", jugador2: "Francisco", pgn: "PGN11" },
+        { date:"24/08/24", po1:"1", pt1:"4", pr1:"", iej1:"", po2:"0", pt2:"0,5", pr2:"", iej2:"", jugador1: "Javier", resultado: "✔-✘", jugador2: "Rosario", pgn: "PGN12" },
+        { date:"24/08/24", po1:"1", pt1:"4", pr1:"", iej1:"", po2:"0", pt2:"0,5", pr2:"", iej2:"", jugador1: "David", resultado: "✔-✘", jugador2: "Rosario", pgn: "PGN13" },
+        { date:"25/08/24", po1:"0", pt1:"1,5", pr1:"", iej1:"", po2:"1", pt2:"5", pr2:"", iej2:"", jugador1: "Benjamín", resultado: "✘-✔", jugador2: "Javier", pgn: "PGN14" },
+        { date:"25/08/24", po1:"0", pt1:"1", pr1:"", iej1:"", po2:"1", pt2:"3", pr2:"", iej2:"", jugador1: "Francisco", resultado: "✘-✔", jugador2: "Fernando", pgn: "PGN15" },
+      ];
+
+      const tabla = document.getElementById("tabla-partidas");
+
+      partidas.forEach((p, i) => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td class="d">${p.date}</td>
+          <td class="n">${p.pt1}</td>
+          <td class="n">${p.po1}</td>
+          <td class="l">${p.jugador1}</td>
+          <td class="r">${p.resultado}</td>
+          <td class="l">${p.jugador2}</td>
+          <td class="n">${p.po2}</td>
+          <td class="n">${p.pt2}</td>
+          <!-- <td class="l">
+            <button class="copy-button" onclick="copiarPGN(this, '${p.pgn}')">
+              Copiar link
+              <span class="copy-icon">📋</span>
+            </button>
+          </td> -->
+        `;
+        tabla.appendChild(fila);
+      });
+
+      function copiarPGN(boton, texto) {
+        const textoOriginal = 'Copiar link <span class="copy-icon">📋</span>';
+        const textoCopiado = 'link copiado <span class="copy-icon">✔</span>';
+
+        navigator.clipboard.writeText(texto).then(() => {
+          boton.innerHTML = textoCopiado;
+
+          setTimeout(() => {
+            boton.innerHTML = textoOriginal;
+          }, 3000);
+        });
+      }
+    </script>
   </div>
   <footer>
     <h2>Copa Ajedrez 2025</h2>
