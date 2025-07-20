@@ -70,75 +70,29 @@
       background: #0A0A0A;
     }
 
-    #calendario {
-        padding: 5%;
-        text-align: center;
+    #title {
+      text-align: center;
+      font-size: 300%;
+      margin-top: 5%;
+      margin-bottom: 5%;
     }
 
-    #calendario h2 {
-        text-align: center;
-        font-size: 200%;
-    }
-
-    #calendario p {
-        text-align: left;
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-
-    .calendar {
-        width: 35%;
-        border: 1px solid white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #0A0A0A;
-        margin: 5%;
-        margin-bottom: 5px;
-        margin-left: 0%;
-        margin-right: 0%;
-        display: inline-block;
-    }
-
-    .calendar-header {
-        text-align: center;
-        padding: 10px 0;
-        background-color: #FF5722;
-        color: #0A0A0A;
-        font-size: 1.5em;
-        font-weight: bold;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-    }
-
-    .calendar-grid {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
-        border-top: 1px solid white;
-    }
-
-    .day {
-        text-align: center;
-        padding: 10px;
-        font-size: 1em;
-        font-weight: bold;
-        color: white;
+    .activity {
+      margin-left: 15%;
+      margin-right: 15%;
+      margin-bottom: 5%;
+      width: 70%;
     }
 
     .date {
-        height: 40px;
-        text-align: center;
-        padding: 10px;
-        font-size: 0.9em;
-        color: white;
-        border-top: 1px solid white;
+      border-bottom: 2px solid #FF5722;
+      padding: 1%;   
+      font-size: 200%;
     }
 
-    .empty {
-        /* background-color: #f4f4f9; */
-        border-top: 1px solid white;
-        /* color: white;
-        padding: 10px;
-        font-size: 0.9em; */
+    .game {
+      font-size: 150%;
+      margin-left: 5%;
     }
 
     footer {
@@ -204,7 +158,6 @@
         transition: color 0.3s;
         margin: 3%;
       }
-      
     }
   </style>
 </head>
@@ -214,237 +167,92 @@
     <img id="logo" src="../images/logo_invertido.png" alt="">
     <div class="nav-links">
       <a href="https://david8-coder.github.io/Copa-Ajedrez/">Inicio</a>
-      <a href="https://david8-coder.github.io/Copa-Ajedrez/acerca-de/">Acerca de</a>
-      <a href="https://david8-coder.github.io/Copa-Ajedrez/calendario/" id="actual">Calendario</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/calendario/">Calendario</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/fixture/">Fixture</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/histórico/">Histórico</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/reglamento/">Reglamento</a>
-      <a href="https://david8-coder.github.io/Copa-Ajedrez/reclamos/">Reclamos</a>
+      <a href="https://david8-coder.github.io/Copa-Ajedrez/denuncias/">Reclamos</a>
     </div>
   </nav>
 
   <div id="sub_body">
-    <section id="calendario">
-        <h2>Calendario</h2>
+    <h1 id="title">Cronograma de la Copa Ajedrez 2025</h1>
+    <div class="activity">
+      <h2 class="date">Domingo, 17 de agosto</h2>
+      <ul class="games">
+        <li class="game"><strong>Fernando - Benjamín.</strong> Fase de Grupos, Grupo A - Jornada 1 de 3.</li>
+      </ul>
+    </div>
 
-        <!-- Calendario de Febrero 2025 -->
-    
-        <!-- Repetir estructura para los meses de marzo a julio 2025 -->
+    <div class="activity">
+      <h2 class="date">Lunes, 18 de agosto</h2>
+      <ul class="games">
+        <li class="game"><strong>Rosario - Ariel.</strong> Fase de Grupos, Grupo A - Jornada 1 de 3.</li>
+      </ul>
+    </div>
 
-        <div class="calendar">
-            <div class="calendar-header">Junio 2025</div>
-            <div class="calendar-grid">
-                <div class="day">Dom</div>
-                <div class="day">Lun</div>
-                <div class="day">Mar</div>
-                <div class="day">Mié</div>
-                <div class="day">Jue</div>
-                <div class="day">Vie</div>
-                <div class="day">Sáb</div>
-                <div class="date">1</div>
-                <div class="date">2</div>
-                <div class="date">3</div>
-                <div class="date">4</div>
-                <div class="date">5</div>
-                <div class="date">6</div>
-                <div class="date">7</div>
-                <div class="date">8</div>
-                <div class="date">9</div>
-                <div class="date">10</div>
-                <div class="date">11</div>
-                <div class="date">12</div>
-                <div class="date">13</div>
-                <div class="date">14</div>
-                <div class="date">15</div>
-                <div class="date">16</div>
-                <div class="date">17</div>
-                <div class="date">18</div>
-                <div class="date">19</div>
-                <div class="date">20</div>
-                <div class="date">21</div>
-                <div class="date" style="background: #00ff2a;">22</div>
-                <div class="date">23</div>
-                <div class="date">24</div>
-                <div class="date">25</div>
-                <div class="date">26</div>
-                <div class="date">27</div>
-                <div class="date">28</div>
-                <div class="date" style="background: #ee82ee;">29</div>
-                <div class="date">30</div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-            </div>
-        </div>
-    
-        <div class="calendar">
-            <div class="calendar-header">Julio 2025</div>
-            <div class="calendar-grid">
-                <div class="day">Dom</div>
-                <div class="day">Lun</div>
-                <div class="day">Mar</div>
-                <div class="day">Mié</div>
-                <div class="day">Jue</div>
-                <div class="day">Vie</div>
-                <div class="day">Sáb</div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="date">1</div>
-                <div class="date">2</div>
-                <div class="date">3</div>
-                <div class="date">4</div>
-                <div class="date">5</div>
-                <div class="date">6</div>
-                <div class="date">7</div>
-                <div class="date">8</div>
-                <div class="date">9</div>
-                <div class="date">10</div>
-                <div class="date">11</div>
-                <div class="date">12</div>
-                <div class="date">13</div>
-                <div class="date">14</div>
-                <div class="date">15</div>
-                <div class="date">16</div>
-                <div class="date">17</div>
-                <div class="date">18</div>
-                <div class="date">19</div>
-                <div class="date">20</div>
-                <div class="date">21</div>
-                <div class="date">22</div>
-                <div class="date">23</div>
-                <div class="date">24</div>
-                <div class="date">25</div>
-                <div class="date">26</div>
-                <div class="date">27</div>
-                <div class="date">28</div>
-                <div class="date">29</div>
-                <div class="date">30</div>
-                <div class="date">31</div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-            </div>
-        </div>
+    <div class="activity">
+      <h2 class="date">Jueves, 21 de agosto</h2>
+      <ul class="games">
+        <li class="game"><strong>Javier - Francisco.</strong> Fase de Grupos, Grupo B - Jornada 1 de 3.</li>
+        <li class="game"><strong>Julián - David.</strong> Fase de Grupos, Grupo B - Jornada 1 de 3.</li>
+      </ul>
+    </div>
 
-        <div class="calendar">
-            <div class="calendar-header">Agosto 2025</div>
-            <div class="calendar-grid">
-                <div class="day">Dom</div>
-                <div class="day">Lun</div>
-                <div class="day">Mar</div>
-                <div class="day">Mié</div>
-                <div class="day">Jue</div>
-                <div class="day">Vie</div>
-                <div class="day">Sáb</div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="date">1</div>
-                <div class="date">2</div>
-                <div class="date">3</div>
-                <div class="date">4</div>
-                <div class="date">5</div>
-                <div class="date">6</div>
-                <div class="date">7</div>
-                <div class="date">8</div>
-                <div class="date">9</div>
-                <div class="date">10</div>
-                <div class="date">11</div>
-                <div class="date">12</div>
-                <div class="date">13</div>
-                <div class="date">14</div>
-                <div class="date">15</div>
-                <div class="date">16</div>
-                <div class="date">17</div>
-                <div class="date">18</div>
-                <div class="date">19</div>
-                <div class="date">20</div>
-                <div class="date">21</div>
-                <div class="date">22</div>
-                <div class="date">23</div>
-                <div class="date">24</div>
-                <div class="date">25</div>
-                <div class="date">26</div>
-                <div class="date">27</div>
-                <div class="date">28</div>
-                <div class="date">29</div>
-                <div class="date">30</div>
-                <div class="date">31</div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-            </div>
-        </div>
-        <div class="calendar">
-            <div class="calendar-header">Septiembre 2025</div>
-            <div class="calendar-grid">
-                <div class="day">Dom</div>
-                <div class="day">Lun</div>
-                <div class="day">Mar</div>
-                <div class="day">Mié</div>
-                <div class="day">Jue</div>
-                <div class="day">Vie</div>
-                <div class="day">Sáb</div>
-                <div class="empty"></div>
-                <div class="date">1</div>
-                <div class="date">2</div>
-                <div class="date">3</div>
-                <div class="date">4</div>
-                <div class="date">5</div>
-                <div class="date">6</div>
-                <div class="date">7</div>
-                <div class="date">8</div>
-                <div class="date">9</div>
-                <div class="date">10</div>
-                <div class="date">11</div>
-                <div class="date">12</div>
-                <div class="date">13</div>
-                <div class="date" style="background: #ff0000; color: white;">14</div>
-                <div class="date">15</div>
-                <div class="date">16</div>
-                <div class="date">17</div>
-                <div class="date">18</div>
-                <div class="date">19</div>
-                <div class="date">20</div>
-                <div class="date">21</div>
-                <div class="date">22</div>
-                <div class="date">23</div>
-                <div class="date">24</div>
-                <div class="date">25</div>
-                <div class="date">26</div>
-                <div class="date">27</div>
-                <div class="date">28</div>
-                <div class="date">29</div>
-                <div class="date">30</div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-                <div class="empty"></div>
-            </div>
-        </div>
-        <p style="color: #00ff2a">■ Publicación del logo, título y demás cualidades oficiales de la Copa Ajedrez 2025 y el Fixture Oficial.</p>
-        <p style="color: #ee82ee">■ Sorteo de la Fase de Grupos.</p>
-        <p style="color: #ff0000">■ Final de la Copa Ajedrez 2025.</p>
-        <p>Las fechas de los demás partidos de la Copa Ajedrez 2025 se confirmarán con la publicación del fixture oficial.</p>
+    <div class="activity">
+      <h2 class="date">Domingo, 24 de agosto</h2>
+      <ul class="games">
+        <li class="game"><strong>Fernando - Rosario.</strong> Fase de Grupos, Grupo A - Jornada 2 de 3.</li>
+        <li class="game"><strong>Benjamín - Ariel.</strong> Fase de Grupos, Grupo A - Jornada 2 de 3.</li>
+      </ul>
+    </div>
 
-    
+    <div class="activity">
+      <h2 class="date">Miércoles, 27 de agosto</h2>
+      <ul class="games">
+        <li class="game"><strong>Javier - Julián.</strong> Fase de Grupos, Grupo B - Jornada 2 de 3.</li>
+        <li class="game"><strong>Francisco - David.</strong> Fase de Grupos, Grupo B - Jornada 2 de 3.</li>
+      </ul>
+    </div>
 
-        <!-- <div class="proyecto">
-            <h3>Villa Signature en Villamartín</h3>
-            <p>Descripción breve del proyecto.</p>
-        </div>
-        <div class="proyecto">
-            <h3>Adelfa 6</h3>
-            <p>Descripción breve del proyecto.</p>
-        </div> -->
-        <!-- Añadir más proyectos según sea necesario -->
-    </section>
+    <div class="activity">
+      <h2 class="date">Sábado, 30 de agosto</h2>
+      <ul class="games">
+        <li class="game"><strong>Fernando - Ariel.</strong> Fase de Grupos, Grupo A - Jornada 3 de 3.</li>
+        <li class="game"><strong>Benjamín - Rosario.</strong> Fase de Grupos, Grupo A - Jornada 3 de 3.</li>
+      </ul>
+    </div>
+
+    <div class="activity">
+      <h2 class="date">Martes, 2 de septiembre</h2>
+      <ul class="games">
+        <li class="game"><strong>Javier - David.</strong> Fase de Grupos, Grupo B - Jornada 3 de 3.</li>
+        <li class="game"><strong>Francisco - Julián.</strong> Fase de Grupos, Grupo B - Jornada 3 de 3.</li>
+      </ul>
+    </div>
+
+    <div class="activity">
+      <h2 class="date">Sábado, 6 de septiembre</h2>
+      <ul class="games">
+        <li class="game"><strong>Por definir - Por definir.</strong> Semifinal.</li>
+      </ul>
+    </div>
+
+    <div class="activity">
+      <h2 class="date">Domingo, 7 de septiembre</h2>
+      <ul class="games">
+        <li class="game"><strong>Por definir - Por definir.</strong> Semifinal.</li>
+      </ul>
+    </div>
+
+    <div class="activity" style="margin-bottom: 5%;">
+      <h2 class="date">Domingo, 14 de septiembre</h2>
+      <ul class="games">
+        <li class="game"><strong>Por definir - Por definir.</strong> Partido por el Tercer Puesto.</li>
+        <li class="game"><strong>Por definir - Por definir.</strong> Final de la Copa Ajedrez 2025.</li>
+      </ul>
+    </div>
+
   </div>
   <footer>
     <h2>Copa Ajedrez 2025</h2>

@@ -86,10 +86,11 @@
 
     table {
       border-collapse: collapse;
-      width: 80%;
+      /* width: 40%;
+      display: inline-block; */
       font-size: 14px;
-      margin-right: 10%;
-      margin-left: 10%;
+      margin-right: 5%;
+      margin-left: 5%;
       margin-bottom: 10%;
     }
 
@@ -234,7 +235,6 @@
     <img id="logo" src="../images/logo_invertido.png" alt="">
     <div class="nav-links">
       <a href="https://david8-coder.github.io/Copa-Ajedrez/">Inicio</a>
-      <a href="https://david8-coder.github.io/Copa-Ajedrez/acerca-de/">Acerca de</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/calendario/">Calendario</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/fixture/" id="actual">Fixture</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/histórico/">Histórico</a>
@@ -246,14 +246,16 @@
   <div id="sub_body">
     <h1 id="title">Fixture Oficial de la Copa Ajedrez 2025</h1>
     <div id="items">
-      <h3>Jugadores (Se definirán en el sorteo el día 29/6)</h3>
+      <h3>Jugadores</h3>
       <ul>
         <li class="players">Jugador 1: Fernández, Fernando.</li>
-        <li class="players">Jugador 2: Por definir.</li>
-        <li class="players">Jugador 3: Por definir.</li>
-        <li class="players">Jugador 4: Por definir.</li>
-        <li class="players">Jugador 5: Por definir.</li>
-        <li class="players">Jugador 6: Por definir.</li>
+        <li class="players">Jugador 2: Zartarian, Benjamín.</li>
+        <li class="players">Jugador 3: Fernández, Rosario.</li>
+        <li class="players">Jugador 4: Bigozi, Ariel.</li>
+        <li class="players">Jugador 5: Caneda, Javier.</li>
+        <li class="players">Jugador 6: Zartarian, Francisco.</li>
+        <li class="players">Jugador 7: Fain, Julián.</li>
+        <li class="players">Jugador 8: Fernández, David.</li>
       </ul>
       <h3>Referencias</h3>
       <ul>
@@ -263,8 +265,9 @@
         <li>IEJ: Índice de Efectividad por Jugada.</li>
       </ul>
     </div>
-    <h2 style="text-align: center;">Grupo Único</h2>
-    <table>
+
+    <h2 style="text-align: center;">Grupo A</h2>
+    <table id="grupo-a">
       <thead>
         <tr>
           <th>Fecha</th>
@@ -283,31 +286,47 @@
           <th>Link</th>
         </tr>
       </thead>
-      <tbody id="tabla-partidas">
+      <tbody id="tabla-partidas-grupo-a">
+        <!-- Las filas se agregarán desde JS -->
+      </tbody>
+    </table>
+
+    <h2 style="text-align: center;">Grupo B</h2>
+    <table id="grupo-b">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th class="small">IEJ</th>
+          <th class="small">Pr</th>
+          <th class="small">PS</th>
+          <th class="small">PO</th>
+          <th>Jugador</th>
+          <th class="small">Resultado</th>
+          <th>Jugador</th>
+          <th class="small">PO</th>
+          <th class="small">PS</th>
+          <th class="small">Pr</th>
+          <th class="small">IEJ</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-partidas-grupo-b">
         <!-- Las filas se agregarán desde JS -->
       </tbody>
     </table>
 
     <script>
       const partidas = [        
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J2", pgn: "PGN1" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J3", resultado: "-", jugador2: "J4", pgn: "PGN2" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J5", resultado: "-", jugador2: "J6", pgn: "PGN3" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J3", pgn: "PGN4" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J4", pgn: "PGN5" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J5", resultado: "-", jugador2: "J6", pgn: "PGN6" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J4", pgn: "PGN7" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J6", pgn: "PGN8" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J3", resultado: "-", jugador2: "J5", pgn: "PGN9" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J5", pgn: "PGN10" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J3", pgn: "PGN11" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J4", resultado: "-", jugador2: "J6", pgn: "PGN12" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "J6", pgn: "PGN13" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J2", resultado: "-", jugador2: "J5", pgn: "PGN14" },
-        { date: "--/--/--", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "J3", resultado: "-", jugador2: "J4", pgn: "PGN15" }
+        { date: "17/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Benjamín", pgn: "PGN1" },
+        { date: "18/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Rosario", resultado: "-", jugador2: "Ariel", pgn: "PGN2" },
+        { date: "24/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Rosario", pgn: "PGN3" },
+        { date: "24/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Benjamín", resultado: "-", jugador2: "Ariel", pgn: "PGN4" },
+        { date: "30/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Ariel", pgn: "PGN5" },
+        { date: "30/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Benjamín", resultado: "-", jugador2: "Rosario", pgn: "PGN6" },
       ];
 
-      const tabla = document.getElementById("tabla-partidas");
+      const tabla = document.getElementById("grupo-a");
 
       partidas.forEach((p, i) => {
         const fila = document.createElement("tr");
@@ -326,13 +345,50 @@
           <td class="small">${p.pr2}</td>
           <td class="small">${p.iej2}</td>
           <td>
-            <button class="copy-button" onclick="copiarPGN(this, '${p.pgn}')">
-              Copiar link
+            <button class="copy-button" on.click="copiarPGN(this, '${p.pgn}')">
+              Link no disponible
               <span class="copy-icon">📋</span>
             </button>
           </td>
         `;
         tabla.appendChild(fila);
+      });
+
+      const partidasb = [        
+        { dateb: "21/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "Francisco", pgnb: "PGN1" },
+        { dateb: "21/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Julián", resultadob: "-", jugador2b: "David", pgnb: "PGN2" },
+        { dateb: "27/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "Julián", pgnb: "PGN3" },
+        { dateb: "27/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Francisco", resultadob: "-", jugador2b: "David", pgnb: "PGN4" },
+        { dateb: "02/09/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "David", pgnb: "PGN5" },
+        { dateb: "02/09/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Francisco", resultadob: "-", jugador2b: "Julián", pgnb: "PGN6" },
+      ];
+
+      const tablab = document.getElementById("grupo-b");
+
+      partidasb.forEach((p, i) => {
+        const filab = document.createElement("tr");
+        filab.innerHTML = `
+          <td>${p.dateb}</td>
+          <td>${p.hourb}</td>
+          <td class="small">${p.iej1b}</td>
+          <td class="small">${p.pr1b}</td>
+          <td class="small">${p.ps1b}</td>
+          <td class="small">${p.po1b}</td>
+          <td>${p.jugador1b}</td>
+          <td class="small">${p.resultadob}</td>
+          <td>${p.jugador2b}</td>
+          <td class="small">${p.po2b}</td>
+          <td class="small">${p.ps2b}</td>
+          <td class="small">${p.pr2b}</td>
+          <td class="small">${p.iej2b}</td>
+          <td>
+            <button class="copy-button" on.click="copiarPGN(this, '${p.pgnb}')">
+              Link no disponible
+              <span class="copy-icon">📋</span>
+            </button>
+          </td>
+        `;
+        tablab.appendChild(filab);
       });
 
       function copiarPGN(boton, texto) {

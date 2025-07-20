@@ -73,29 +73,68 @@
       margin-left: 3%;
     }
 
-    #redirection {      
-      text-decoration: none;
+    #title {
+      margin-top: -10%;
+      margin-bottom: 5%;
+      text-align: center;
     }
 
-    #redirection input {
-      width: 20%;
-      display: block;
-      margin: auto;
-      margin-top: 5%;
+    #form {
+      margin-left: 28%;
+      margin-right: 28%;
       margin-bottom: 5%;
-      font-size: 150%;
+    }
+
+    input {
+      font-size: 15px;
+      padding: 1.2%;
+      background: none;
+      border: 1px solid #FF5722;
+      border-radius: 200px;
+      color: #FF5722;      
+      transition: 0.2s;
+    }
+
+    input:focus {
+      border-radius: 10px;
+    }
+
+    select {
       padding: 2%;
-      border: none;
-      border-radius: 100px;
       background: #FF5722;
       color: #0A0A0A;
-      transition: 0.3s ease-in-out;
+      border: none;
+      border-radius: 200px;
     }
 
-    #redirection input:hover {
-      width: 30%;
-      background: #FFA500;
-      cursor: pointer;
+    #title_r, #chapter {
+      text-align: center;
+    }
+
+    textarea {
+      min-width: 100%;
+      max-width: 100%;
+      font-size: 15px;
+      padding: 1.2%;
+      background: none;
+      border: 1px solid #FF5722;
+      border-radius: 5px;
+      color: #FF5722;
+    }
+
+    button {
+      padding: 2%;
+      font-size: 15px;
+      width: 15%;
+      background: #FF5722;
+      color: #0A0A0A;
+      border-radius: 200px;
+      border: none;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: orange;
     }
 
     footer {
@@ -178,7 +217,6 @@
     <img id="logo" src="../images/logo_invertido.png" alt="">
     <div class="nav-links">
       <a href="https://david8-coder.github.io/Copa-Ajedrez/">Inicio</a>
-      <a href="https://david8-coder.github.io/Copa-Ajedrez/acerca-de/">Acerca de</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/calendario/">Calendario</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/fixture/">Fixture</a>
       <a href="https://david8-coder.github.io/Copa-Ajedrez/histórico/">Histórico</a>
@@ -188,10 +226,77 @@
   </nav>
 
   <div id="sub_body">
-    <h1 style="text-align: center;">Esta sección aún no está disponible</h1>
-    <a id="redirection" href="https://david8-coder.github.io/Copa-Ajedrez/">
-      <input type="button" value="Volver al inicio">
-    </a>
+    <h1 id="title">Reclamos</h1>
+    <form id="form" action="https://formspree.io/f/mldlgggw." method="POST">
+      <!-- 0. Nombre y Apellido -->
+      <label for="firstName">Nombre:</label>
+      <input type="text" id="firstName" name="firstName" required>
+      <label for="lastName">Apellido:</label>
+      <input type="text" id="lastName" name="lastName" required>
+      <br><br>
+
+      <!-- 1. Desplegable -->
+      <label for="category">Objeto de reclamo:</label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="player">Hacia un jugador/miembro</option>
+        <option value="referee">Hacia un árbitro</option>
+        <option value="org">Hacia la organización</option>
+        <option value="otro">Otro</option>
+      </select>
+      <br><br>
+
+      <!-- 2. Campos numéricos -->
+      <label for="respaldo">Respaldo (sección del reglamento oficial que abala el reclamo)</label>
+      <br><br>
+      <label for="title">Título:</label>
+      <input type="number" id="title_r" name="title" min="1" max="8" required>
+      <label for="chapter">Capítulo:</label>
+      <input type="number" id="chapter" name="chapter" min="1" max="6" required>
+      <br><br>
+
+      <!-- 3. Mensaje -->
+      <label for="message">Detalle del reclamo:</label><br>
+      <textarea id="message" placeholder="Explique en que consiste su reclamo" name="message" rows="5" cols="40" required></textarea>
+      <br><br>
+
+      <!-- Anti‑spam opcional -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit" onclick="answer">Enviar</button>
+    </form>
+    <h3 id="notice" style="display: none;">¡Reclamo enviado con éxito! Recibirá una respuesta dentro de 10 días hábiles.</h3>
+
+    <script>
+      const form = document.getElementById('form');
+      const status = document.getElementById('form-status');
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault(); // evita la redirección
+        const data = new FormData(form);
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            status.textContent = "¡Mensaje enviado correctamente!";
+            form.reset();
+          } else {
+            status.textContent = "Error al enviar el mensaje.";
+          }
+        } catch (error) {
+          status.textContent = "Error al enviar el mensaje.";
+        }
+      });
+
+      function answer() {
+        notice = document.getElementById("notice");
+        notice.setAttribute("style", "display: block; text-align: center; color: green; margin-bottom: 5%;");
+      }
+    </script>
+
   </div>
   <footer>
     <h2>Copa Ajedrez 2025</h2>
