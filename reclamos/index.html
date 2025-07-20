@@ -135,6 +135,7 @@
 
     button:hover {
       background: orange;
+      cursor: pointer;
     }
 
     footer {
@@ -227,7 +228,7 @@
 
   <div id="sub_body">
     <h1 id="title">Reclamos</h1>
-    <form id="form" action="https://formspree.io/f/mldlgggw." method="POST">
+    <form id="form" action="https://formspree.io/f/mldlgggw" method="POST">
       <!-- 0. Nombre y Apellido -->
       <label for="firstName">Nombre:</label>
       <input type="text" id="firstName" name="firstName" required>
@@ -265,7 +266,7 @@
 
       <button type="submit">Enviar</button>
     </form>
-    <h3 id="notice" style="display: none;">¡Reclamo enviado con éxito! Recibirá una respuesta dentro de 10 días hábiles.</h3>
+    <!-- <h3 id="notice" style="display: none;">¡Reclamo enviado con éxito! Recibirá una respuesta dentro de 10 días hábiles.</h3> -->
 
     <script>
       const form = document.getElementById('form');
@@ -290,11 +291,10 @@
           status.textContent = "Error al enviar el mensaje.";
         }
       });
-
-      function answer() {
-        notice = document.getElementById("notice");
-        notice.setAttribute("style", "display: block; text-align: center; color: green; margin-bottom: 5%;");
-      }
+      // function answer() {
+      //   notice = document.getElementById("notice");
+      //   notice.setAttribute("style", "display: block; text-align: center; color: green; margin-bottom: 5%;");
+      // }
     </script>
 
   </div>
