@@ -283,7 +283,7 @@
           <th class="small">PS</th>
           <th class="small">Pr</th>
           <th class="small">IEJ</th>
-          <th>Link</th>
+          <th>Copiar PGN</th>
         </tr>
       </thead>
       <tbody id="tabla-partidas-grupo-a">
@@ -308,7 +308,7 @@
           <th class="small">PS</th>
           <th class="small">Pr</th>
           <th class="small">IEJ</th>
-          <th>Link</th>
+          <th>Copiar PGN</th>
         </tr>
       </thead>
       <tbody id="tabla-partidas-grupo-b">
@@ -318,12 +318,44 @@
 
     <script>
       const partidas = [        
-        { date: "17/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Benjamín", pgn: "PGN1" },
-        { date: "18/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Rosario", resultado: "-", jugador2: "Ariel", pgn: "PGN2" },
-        { date: "24/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Rosario", pgn: "PGN3" },
-        { date: "24/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Benjamín", resultado: "-", jugador2: "Ariel", pgn: "PGN4" },
-        { date: "30/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Ariel", pgn: "PGN5" },
-        { date: "30/08/25", hour: "--:--", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Benjamín", resultado: "-", jugador2: "Rosario", pgn: "PGN6" },
+        { date: "17/08/25", hour: "16:00", po1: "1", ps1: "1", pr1: "74,7", iej1: "38,8", po2: "0", ps2: "0", pr2: "65,9", iej2: "44", jugador1: "Fernando", resultado: "✓-✕", jugador2: "Benjamín", pgn: `[Event "Copa-Ajedrez-2025"]
+          [Site "Lanús"]
+          [Date "2025.08.17"]
+          [Round "Fase de Grupos, Grupo A - Jornada 1 de 3"]
+          [White "Benjamín ZARTARIAN"]
+          [Black "Fernando FERNÁNDEZ"]
+          [Result "0-1"]
+          [TimeControl "1800"]
+          [Termination "Fernando FERNÁNDEZ ha ganado por jaque mate"]
+          [Link "https://www.chess.com/analysis/game/pgn/2mGjuRHEfY/analysis"]
+
+          1. e4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. d3 Bb4 5. a4 Nd4 6. Nxd4 exd4 7. Bd2 dxc3 8.
+          bxc3 Bc5 9. d4 Bb6 10. Be3 Nxe4 11. h4 Qe7 12. Bg5 Nxc3+ 13. Bxe7 Nxd1 14. Ba3
+          Nc3 15. Bd3 Bxd4 16. Rc1 d6 17. Bb2 c5 18. a5 O-O 19. Rh3 Bxh3 20. gxh3 a6 21.
+          Ra1 Rfe8+ 22. Kf1 d5 23. h5 c4 24. Bf5 g6 25. hxg6 hxg6 26. Bd7 Re2 27. Bg4
+          Rxf2+ 28. Ke1 Re8+ 29. Be2 Rexe2# 0-1` },
+        { date: "18/08/25", hour: "21:30", po1: "0", ps1: "0", pr1: "54,4", iej1: "77,1", po2: "1", ps2: "1", pr2: "64,4", iej2: "70,3", jugador1: "Rosario", resultado: "✕-✓", jugador2: "Ariel", pgn: `[Event "Copa Ajedrez 2025"]
+          [Site "Chess.com"]
+          [Date "2025.08.18"]
+          [Round "Fase de Grupos, Grupo A - Jornada 1 de 3"]
+          [White "Ariel BIGOZI"]
+          [Black "Rosario FERNÁNDEZ"]
+          [Result "1-0"]
+          [TimeControl "1800"]
+          [Termination "Ariel BIGOZI ha ganado por jaque mate"]
+          [Link "https://www.chess.com/game/live/142053746404?username=rosaritoo&move=0"]
+
+          1. g3 d5 2. Bg2 e5 3. d3 Nf6 4. e4 Nc6 5. exd5 Nxd5 6. Nf3 Be7 7. O-O O-O 8. c4
+          Ndb4 9. Re1 Be6 10. Nxe5 Nxe5 11. Rxe5 Nc6 12. Re1 Bf5 13. Bxc6 bxc6 14. g4 Qc8
+          15. gxf5 Qxf5 16. Rxe7 Rae8 17. Rxe8 Rxe8 18. Nc3 Qg5+ 19. Kf1 Qh4 20. Bf4 Qh3+
+          21. Kg1 Qg4+ 22. Bg3 h5 23. Qa4 Qf3 24. Rf1 Qxd3 25. Bxc7 Qg6+ 26. Bg3 h4 27.
+          Qxa7 hxg3 28. fxg3 Qd3 29. b3 Kh7 30. Na4 f5 31. Nc5 Qc2 32. Rf2 Qc1+ 33. Kg2 f4
+          34. Nd3 fxg3 35. Nxc1 Re1 36. Kxg3 Rxc1 37. a4 Rg1+ 38. Rg2 Rh1 39. a5 Ra1 40.
+          a6 c5 41. Qb7 Rb1 42. a7 Rc1 43. Qe4+ g6 44. a8=Q Kh6 45. Qh8+ Kg5 46. Kf2# 1-0` },
+        { date: "24/08/25", hour: "14:00", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Rosario", pgn: "No disponible" },
+        { date: "24/08/25", hour: "16:00", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Benjamín", resultado: "-", jugador2: "Ariel", pgn: "No disponible" },
+        { date: "30/08/25", hour: "15:00", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Fernando", resultado: "-", jugador2: "Ariel", pgn: "No disponible" },
+        { date: "30/08/25", hour: "17:00", po1: "-", ps1: "-", pr1: "-", iej1: "-", po2: "-", ps2: "-", pr2: "-", iej2: "-", jugador1: "Benjamín", resultado: "-", jugador2: "Rosario", pgn: "No disponible" },
       ];
 
       const tabla = document.getElementById("grupo-a");
@@ -345,8 +377,8 @@
           <td class="small">${p.pr2}</td>
           <td class="small">${p.iej2}</td>
           <td>
-            <button class="copy-button" on.click="copiarPGN(this, '${p.pgn}')">
-              Link no disponible
+            <button class="copy-button" onclick="copiarPGN(this, '${p.pgn}')">
+              Copiar PGN 
               <span class="copy-icon">📋</span>
             </button>
           </td>
@@ -355,12 +387,12 @@
       });
 
       const partidasb = [        
-        { dateb: "21/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "Francisco", pgnb: "PGN1" },
-        { dateb: "21/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Julián", resultadob: "-", jugador2b: "David", pgnb: "PGN2" },
-        { dateb: "27/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "Julián", pgnb: "PGN3" },
-        { dateb: "27/08/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Francisco", resultadob: "-", jugador2b: "David", pgnb: "PGN4" },
-        { dateb: "02/09/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "David", pgnb: "PGN5" },
-        { dateb: "02/09/25", hourb: "--:--", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Francisco", resultadob: "-", jugador2b: "Julián", pgnb: "PGN6" },
+        { dateb: "21/08/25", hourb: "21:30", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "Francisco", pgnb: "No disponible" },
+        { dateb: "21/08/25", hourb: "22:45", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Julián", resultadob: "-", jugador2b: "David", pgnb: "No disponible" },
+        { dateb: "27/08/25", hourb: "21:30", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "Julián", pgnb: "No disponible" },
+        { dateb: "27/08/25", hourb: "22:45", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Francisco", resultadob: "-", jugador2b: "David", pgnb: "No disponible" },
+        { dateb: "02/09/25", hourb: "20:30", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Javier", resultadob: "-", jugador2b: "David", pgnb: "No disponible" },
+        { dateb: "02/09/25", hourb: "22:00", po1b: "-", ps1b: "-", pr1b: "-", iej1b: "-", po2b: "-", ps2b: "-", pr2b: "-", iej2b: "-", jugador1b: "Francisco", resultadob: "-", jugador2b: "Julián", pgnb: "No disponible" },
       ];
 
       const tablab = document.getElementById("grupo-b");
@@ -382,8 +414,8 @@
           <td class="small">${p.pr2b}</td>
           <td class="small">${p.iej2b}</td>
           <td>
-            <button class="copy-button" on.click="copiarPGN(this, '${p.pgnb}')">
-              Link no disponible
+            <button class="copy-button" onclick="copiarPGN(this, '${p.pgnb}')">
+              Copiar PGN
               <span class="copy-icon">📋</span>
             </button>
           </td>
@@ -392,8 +424,8 @@
       });
 
       function copiarPGN(boton, texto) {
-        const textoOriginal = 'Copiar link <span class="copy-icon">📋</span>';
-        const textoCopiado = 'Link copiado <span class="copy-icon">✔</span>';
+        const textoOriginal = 'Copiar PGN <span class="copy-icon">📋</span>';
+        const textoCopiado = 'PGN copiado <span class="copy-icon">✔</span>';
 
         navigator.clipboard.writeText(texto).then(() => {
           boton.innerHTML = textoCopiado;
